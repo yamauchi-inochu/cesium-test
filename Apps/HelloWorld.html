@@ -19,7 +19,12 @@
 <body>
   <div id="cesiumContainer"></div>
   <script>
-  var viewer = new Cesium.Viewer('cesiumContainer');
+  var viewer = new Cesium.Viewer('cesiumContainer',{
+      imageProvider : new Cesium.createOpenStreetMapImageryProvider({
+      url: 'https://cyberjapandata.gsi.go.jp/xyz/std/',
+      credit: new Cesium.Credit('地理院タイル', '', 'https://maps.gsi.go.jp/development/ichiran.html')
+    })
+    );
 
   viewer.camera.flyTo({   
        destination : Cesium.Cartesian3.fromDegrees(136.194763, 36.047711, 45000.0)});
