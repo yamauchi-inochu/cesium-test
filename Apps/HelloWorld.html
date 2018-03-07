@@ -20,14 +20,12 @@
   <div id="cesiumContainer"></div>
   <script>
   var viewer = new Cesium.Viewer('cesiumContainer', {
-    imageryProvider: new Cesium.createOpenStreetMapImageryProvider({
-      url: 'https://cyberjapandata.gsi.go.jp/xyz/std/',
-      credit: new Cesium.Credit('地理院タイル', '', 'https://maps.gsi.go.jp/development/ichiran.html')
-    }),
-    baseLayerPicker: false,
-    geocoder: false,
-    homeButton: false
-  });
+    imageryProvider: new Cesium.ArcGisMapServerImageryProvider({
+      url: 'https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer',
+      credit: new Cesium.Credit('Sources: Esri, DigitalGlobe, USDA, USGS, GeoEye, Getmapping, AeroGRID, IGN, IGP, UPR-EGP, and the GIS community', '', 'https://doc.arcgis.com/en/data-appliance/6.4/maps/world-imagery.htm') }),
+      baseLayerPicker: false,
+      geocoder: false,
+      homeButton: false });
 
 
   viewer.camera.flyTo({   
